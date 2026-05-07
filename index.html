@@ -84,6 +84,7 @@ hr{border:none;border-top:1px solid var(--border)}
 .hero-cta-wrap{display:flex;flex-direction:column;gap:12px;align-items:flex-start}
 .hero-trust{font-size:13px;color:var(--text-sec);display:flex;align-items:center;gap:6px;flex-wrap:wrap}
 .hero-trust span::before{content:'✓ ';color:var(--red);font-weight:700}
+.hero-bottom{display:none}
 
 /* ========================
    COLLAPSIBLE
@@ -302,11 +303,39 @@ footer p{font-size:13px;color:var(--text-sec)}
 ======================== */
 @media(max-width:768px){
   section{padding:52px 0}
-  .hero{min-height:100svh}
-  .hero-bg::after{background:linear-gradient(to bottom,rgba(255,255,255,.62) 0%,rgba(255,255,255,.58) 60%,rgba(255,255,255,.35) 100%)}
-  .hero-inner{padding:28px 20px 60px}
+  .hero{align-items:stretch;min-height:100svh}
+  .hero-bg::after{background:linear-gradient(
+    to bottom,
+    rgba(255,255,255,.65) 0%,
+    rgba(255,255,255,.12) 30%,
+    rgba(255,255,255,.12) 58%,
+    rgba(255,255,255,.75) 78%,
+    rgba(255,255,255,.92) 100%
+  )}
+  .hero-inner{
+    display:flex;
+    flex-direction:column;
+    justify-content:space-between;
+    min-height:100svh;
+    padding:28px 20px 36px;
+  }
   .hero-content{max-width:100%}
-  .hero h1{font-size:32px}
+  .hero h1{font-size:26px;line-height:1.15;margin-bottom:0}
+  .hero-sub{display:none}
+  .hero-cta-wrap{display:none}
+  .hero-bottom{
+    display:flex!important;
+    flex-direction:column;
+    gap:12px;
+  }
+  .hero-bottom .hero-sub{
+    display:block;
+    font-size:14px;
+    color:var(--text-sec);
+    line-height:1.65;
+    margin-bottom:4px;
+  }
+  .hero-bottom .hero-trust{font-size:12px}
   .hero-sub{font-size:15px}
   .btn{font-size:15px;padding:15px 28px}
   .btn-full{width:100%}
@@ -353,6 +382,16 @@ footer p{font-size:13px;color:var(--text-sec)}
           &nbsp;·&nbsp;
           <span>Sekali bayar, bukan langganan</span>
         </div>
+      </div>
+    </div>
+    <!-- MOBILE ONLY: sub + cta di bawah -->
+    <div class="hero-bottom">
+      <p class="hero-sub" style="margin-bottom:0">Dengan <strong>200 kata inti + Metode Kata Hidup</strong>, lo bisa mulai bikin kalimat Jepang sendiri sejak hari pertama — bahkan kalau lo belum pernah belajar Jepang sama sekali.</p>
+      <a href="#beli" class="btn btn-primary btn-full">→ Gue Mau Mulai Sekarang</a>
+      <div class="hero-trust">
+        <span>Akses seumur hidup</span>
+        &nbsp;·&nbsp;
+        <span>Sekali bayar, bukan langganan</span>
       </div>
     </div>
   </div>
